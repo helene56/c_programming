@@ -34,6 +34,12 @@ int main()
     int current_col = 0;
     do
     {
+        
+        if (position_memory[m][j-1] == 1 && position_memory[m][j+1] == 1 && position_memory[m-1][j] == 1 && position_memory[m+1][j] == 1 && position_memory[m+1][j] == 1) // check if the letter is surrounded on all sides
+        {
+            program_on = false;
+            
+        }
         // calculate:
         printf("before cal, current row: %d current col: %d\n", current_row, current_col);
         direction_number = rand() % 4;
@@ -50,11 +56,7 @@ int main()
         m += temp_array[0];
         j += temp_array[1];
 
-        if (position_memory[m][j-1] == 1 && position_memory[m][j+1] == 1 && position_memory[m-1][j] == 1 && position_memory[m-1][j] == 1 && position_memory[m+1][j] == 1) // check if the letter is surrounded on all sides
-        {
-            program_on = false;
-            
-        }
+        
 
         if (position_memory[m][j] == 0 && m >= 0 && j >= 0 && m <= 9 && j <= 9) // move allowed: nothing beside it and not outside grid
         {
