@@ -13,23 +13,25 @@ int main()
     char user_input[11];
     int num = sizeof(user_input) / sizeof(user_input[0]);
     char ch;
+    int len = 0;
 
     printf("Enter a sentence: \n");
-    // while ((ch = getchar()) != '\n');
-
-    for (int n = 0; n < 11; n++)
+    while ((ch = getchar()) != '\n')
     {
-        scanf("%c", &user_input[n]);
+        len++;
     }
     
-    
-    printf("%d", num);
 
-    for (int i = 0; i < 11; i++)
-    {
-        printf("%c", user_input[i]);
-    }
-    printf("\n");
+    
+    
+    
+    
+
+    // for (int i = 0; i < 11; i++)
+    // {
+    //     printf("%c", user_input[i]);
+    // }
+    // printf("\n");
     
 
 }
