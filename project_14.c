@@ -4,8 +4,8 @@
 // todo
 // 1. read input and store in char[n] - løst
 // 2. stop at '.' and store in seperate char variable - løst
-// 3. start from the input from 1. and print the words from the back
-// 4. print '.'
+// 3. start from the input from the last word from 1. and print then search for the next last word
+// 4. print '.' - løst
 
 
 int main()
@@ -21,15 +21,7 @@ int main()
         user_input[len_var] = ch;
         len_var++;
     }
-    // printf("%c", ch);
-
-    // for (int i = 0; i < len_var; i++)
-    // {
-    //     printf("%c", user_input[i]);
-
-    // }
-    // printf("\n");
-
+    
     for (int i = len_var; i > -1; i--)
     {
 
