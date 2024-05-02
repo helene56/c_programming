@@ -3,7 +3,8 @@
 // 1. ask the user to enter a series of integers, which is stored in an array
 // 2. sort the integers by calling the function selection_sort
 // 2.1 selection_sort must do: search the array to find the largest element, then move it to the last position in the array
-// 2.2 call it self and sort the first element n-1 of the array 
+// 2.2 call it self and sort the first element n-1 of the array
+// notes: later an update to this program would be a way to use getchar to break the loop that reads the input of characters to define the user input based on how many numbers are typed
 #include <stdio.h>
 
 #define SIZE 5
