@@ -10,14 +10,13 @@
 
 void selection_sort(int array[], int lenght);
 
-
 int main()
 {
     int user_array[SIZE];
     int input;
     int count = 0;
 
-    printf("Enter a series of integers: ");
+    printf("Enter a series of %d integers: ", SIZE);
     
     for (int i = 0; i < SIZE; i++)
     {
@@ -67,7 +66,11 @@ void selection_sort(int array[], int lenght)
             array[i-1] = array[i];
         }
     }
-
+    
     array[lenght-1] = largest_num;
+    if (lenght > 1)
+    {
+         selection_sort(array, lenght - 1);
+    }
 
 }
