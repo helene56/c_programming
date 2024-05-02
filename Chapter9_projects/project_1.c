@@ -6,7 +6,7 @@
 // 2.2 call it self and sort the first element n-1 of the array 
 #include <stdio.h>
 
-#define SIZE 50
+#define SIZE 5
 
 void selection_sort(int array[], int lenght);
 
@@ -18,24 +18,24 @@ int main()
     int count = 0;
 
     printf("Enter a series of integers: ");
-    while ((input = getchar()) != '\n')
+    
+    for (int i = 0; i < SIZE; i++)
     {
-        // user_array[count] = input;
-        // count++;
+        scanf("%d", &user_array[i]);
     }
 
-    printf("count: %d\n", count);
+    // printf("count: %d\n", count);
 
     printf("numbers in array: ");
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < SIZE; i++)
     {
         printf("%d", user_array[i]);
     }
     printf("\n");
 
-    selection_sort(user_array, count);
+    selection_sort(user_array, SIZE);
     printf("numbers sorted test: ");
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < SIZE; i++)
     {
         printf("%d", user_array[i]);
     }
@@ -64,7 +64,7 @@ void selection_sort(int array[], int lenght)
     {
         if (i > position)
         {
-            array[i] = array[i-1];
+            array[i-1] = array[i];
         }
     }
 
