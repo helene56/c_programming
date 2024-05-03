@@ -17,6 +17,15 @@ int segments[10][7] = {{1, 1, 1, 1, 1, 1, 0},
                        {1, 1, 1, 1, 1, 1, 1},
                        {1, 1, 1, 1, 0, 1, 1}};
 
+int digit_pos[6][2] = {{0, 1},
+                       {1, 2},
+                       {2, 2},
+                       {3, 1},
+                       {2, 0},
+                       {1, 0}};
+
+char ch = ' ';
+
 void clear_digits_array(void);
 void process_digit(int digit, int position);
 void print_digits_array(void);
@@ -39,9 +48,21 @@ void clear_digits_array(void)
 
 void process_digit(int digit, int position)
 {
-    switch (digit)
+    for (int i = 0; i < 7; i++)
+    if (segments[digit][i])
     {
-    case 0: digits[0][1 + position * 4] = '_'; digits[1][2 + position * 4] = '|'; digits[2][2 + position * 4] = '|'; digits[2][1 + position * 4] = '_'; digits[2][0 + position * 4] = '|'; digits[1][0 + position * 4] = '|';
+        if (i == 0 || i == 3 || i == 6)
+        {
+            ch = '_';
+        }
+        else
+        {
+            ch = '|';
+        }
+        int first_pos = digit_pos[i][0];
+        int second_pos = digit_pos[i][1];
+
+        digits[first_pos][second_pos] = ch;
     }
 }
 
