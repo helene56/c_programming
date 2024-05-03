@@ -57,17 +57,8 @@ void selection_sort(int array[], int lenght)
             position = i;
         }
     }
-
-    // puts it in the last position of the array
-    array[position] = 0;
-    for (int i = 0; i < lenght; i++)
-    {
-        if (i > position)
-        {
-            array[i-1] = array[i];
-        }
-    }
-    
+    // switches the current num at the end of the array to the pos of the largest num, then puts the largest num at the end of the array
+    array[position] = array[lenght - 1];
     array[lenght-1] = largest_num;
     if (lenght > 1)
     {
