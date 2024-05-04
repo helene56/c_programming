@@ -75,9 +75,6 @@ void process_digit(int digit, int position)
             }
             int first_pos = digit_pos[i][0];
             int second_pos = digit_pos[i][1];
-            // printf("i: %d\n", i);
-            // printf("first pos: %d\n", first_pos);
-            // printf("second pos: %d\n", second_pos);
 
             digits[first_pos][second_pos+position] = ch;
         }
