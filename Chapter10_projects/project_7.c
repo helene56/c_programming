@@ -33,13 +33,16 @@ void print_digits_array(void);
 
 int main()
 {
+    int position = 0;
     char user_input;
     clear_digits_array();
     printf("Enter a number: ");
     while ((user_input = getchar()) != '\n')
     {
-        process_digit(user_input - '0', 0);
-        // putchar(user_input);
+        
+        process_digit(user_input - '0', position);
+        position += 4;
+        
     }
     print_digits_array();
 
@@ -76,7 +79,7 @@ void process_digit(int digit, int position)
             // printf("first pos: %d\n", first_pos);
             // printf("second pos: %d\n", second_pos);
 
-            digits[first_pos][second_pos] = ch;
+            digits[first_pos][second_pos+position] = ch;
         }
     }
     
