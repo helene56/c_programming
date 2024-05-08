@@ -5,7 +5,7 @@ int *find_largest(int a[], int n);
 int main()
 {
     int a[5] = {9, 3, 0, 8, 2};
-    int n = sizeof(a) / sizeof(a[0]);
+    int n = sizeof(a) / sizeof(a[0]); // gets the size of the array a
     printf("%d\n", *find_largest(a, n)); // uses * to dereference so i can get the value and NOT the address
 }
 
