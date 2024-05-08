@@ -7,7 +7,7 @@ void find_two_largest(int a[], int n, int *largest, int *second_largest);
 int main()
 {
     int a[N] = {0, 1, 5, 3, 7};
-    int largest, second_largest;
+    int largest = 0, second_largest = 0;
 
     find_two_largest(a, N, &largest, &second_largest);
 
@@ -17,23 +17,18 @@ int main()
 
 void find_two_largest(int a[], int n, int *largest, int *second_largest)
 {
-    int temp = 0;
-    int temp_2 = 0;
     for (int i = 0; i < n; i++)
     {
-        if (a[i] > temp)
+        if (a[i] > *largest)
         {
-            temp = a[i];
+            *largest = a[i];
         }
     }
     for (int i = 0; i < n; i++)
     {
-        if (a[i] > temp_2 && a[i] < temp)
+        if (a[i] > *second_largest && a[i] < *largest)
         {
-            temp_2 = a[i];
+            *second_largest = a[i];
         }
     }
-
-    *largest = temp;
-    *second_largest = temp_2;
 }
