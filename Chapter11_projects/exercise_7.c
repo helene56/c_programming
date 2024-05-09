@@ -17,40 +17,26 @@ int main()
 
 void split_date(int day_of_year, int year, int *month, int *day)
 {
-    int days_of_monts[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int days_of_months[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     // The leap year can be determined by checking if the year is divisible by 4, not divisible by 100 unless also divisible by 400.
-    bool is_leap_year = false;
-    if (year % 4 == 0)
-    {
-        if (year % 100 == 0 && year % 400 == 0)
-        {
-            is_leap_year = true;
-
-        }
-        else if (year % 100 != 0)
-        {
-            is_leap_year = true;
-        }
-    }
-
+    bool is_leap_year = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+    
     if (is_leap_year)
     {
-        days_of_monts[1] += 1;
+        days_of_months[1] += 1;
     }
 
-    int temp = 0;
+    int days_passed = 0;
     for (int i = 0; i < 12; i++)
     {
-        if (days_of_monts[i] + temp > day_of_year)
+        
+        days_passed += days_of_months[i];
+        
+        if (days_passed > day_of_year)
         {
-            *month = i+1;  // Set the value at the memory address 'month' points to, to 'i+1'
+            *month = i + 1;  // Set the value at the memory address 'month' points to, to 'i+1'
+            *day = day_of_year - (days_passed - days_of_months[i]); // set the day
             break;
         }
-        else
-        {
-            temp += days_of_monts[i];
-        }
     }
-
-    *day = day_of_year - temp;
 }
