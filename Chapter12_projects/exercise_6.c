@@ -1,4 +1,5 @@
 #include <stdio.h>
+// rewrite function to use pointer arithmetic instead of array subscipting
 
 int sum_array(const int a[], int n)
 {
