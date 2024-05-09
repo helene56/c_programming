@@ -3,9 +3,23 @@
 
 void store_zeros(int a[], int n)
 {
-    int i;
-    for (i = 0; i < n; i++)
+    int *p;
+    for (p = a; p < a + n; p++)
     {
-        a[i] = 0;
+        *p = 0;
     }
+}
+
+int main()
+{
+    int a[5];
+    int n = sizeof(a) / sizeof(a[0]);
+
+    store_zeros(a, n);
+
+    for (int *p = a; p < a + n; p++)
+    {
+        printf("%d", *p);
+    }
+    printf("\n");
 }
