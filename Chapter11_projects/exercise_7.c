@@ -5,12 +5,14 @@ void split_date(int day_of_year, int year, int *month, int *day);
 
 int main()
 {
-    int day_of_year = 32;
+    int day_of_year = 143;
     int year = 2024;
     int month;
     int day;
 
-    
+    split_date(day_of_year, year, &month, &day);
+
+    printf("year: %d, month: %d, day: %d\n", year, month, day);
 }
 
 void split_date(int day_of_year, int year, int *month, int *day)
@@ -22,12 +24,12 @@ void split_date(int day_of_year, int year, int *month, int *day)
     {
         if (year % 100 == 0 && year % 400 == 0)
         {
-            is_leap_year == true;
+            is_leap_year = true;
 
         }
         else if (year % 100 != 0)
         {
-            is_leap_year == true;
+            is_leap_year = true;
         }
     }
 
@@ -35,6 +37,7 @@ void split_date(int day_of_year, int year, int *month, int *day)
     {
         days_of_monts[1] += 1;
     }
+
     int temp = 0;
     for (int i = 0; i < 12; i++)
     {
@@ -49,5 +52,5 @@ void split_date(int day_of_year, int year, int *month, int *day)
         }
     }
 
-    *day = temp - day_of_year;
+    *day = day_of_year - temp;
 }
