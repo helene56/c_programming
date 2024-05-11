@@ -8,7 +8,6 @@ int main()
     char array[50];
     int n = 50;
     int i = 0;
-    
 
     printf("Enter a message: ");
 
@@ -18,7 +17,7 @@ int main()
         i++;
     }
 
-    for (int j = 0; j < i; j++)
+    for (int j = i; j >= 0; j--)
     {
         printf("%c", array[j]);
     }
