@@ -7,19 +7,17 @@ int main()
     char userMessage;
     char array[50];
     int n = 50;
-    int i = 0;
-
+    char *p = array;
     printf("Enter a message: ");
 
-    while ((userMessage = getchar()) != '\n' && i != n)
+    while ((userMessage = getchar()) != '\n' && p != array + n)
     {
-        array[i] = userMessage;
-        i++;
+        *p++ = userMessage;
     }
 
-    for (int j = i; j >= 0; j--)
+    for (; p >= array; p--)
     {
-        printf("%c", array[j]);
+        printf("%c", *p);
     }
     printf("\n");
 
