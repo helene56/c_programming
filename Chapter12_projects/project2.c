@@ -22,13 +22,21 @@ int main()
 
     while (p >= array)
     {
-        if (*p2++ == *p--)
-        {
-            palindrome = true;
-        }
-        // putchar(*p--);
+        // if (*p2++ == *p--)
+        // {
+        //     palindrome = true;
+        // }
+
+        palindrome = *p2++ == *p-- ? true : palindrome;
     }
     
-    printf("%d\n", palindrome);
+    if (palindrome)
+    {
+        printf("Palindrome");
+    } else
+    {
+        printf("Not a palindrome");
+    }
+    printf("\n");
 
 }
