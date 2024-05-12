@@ -5,5 +5,23 @@
 
 int main()
 {
+    char userMessage;
+    char array[50];
+    int n = 50;
+    char *p = array;
+    
+    printf("Enter a message: ");
+
+    while ((userMessage = getchar()) != '\n')
+    {
+        *p++ = userMessage;
+    }
+
+    while (p >= array)
+    {
+        putchar(*p--);
+    }
+
+    printf("\n");
 
 }
