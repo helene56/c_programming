@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 // write a program that reads a mesage then checks wheter it's a palindrome
 // revise the prgram to use pointerd instead of integers to keep track of positions in the array
 
@@ -9,6 +10,8 @@ int main()
     char array[50];
     int n = 50;
     char *p = array;
+    bool palindrome = false;
+    char *p2 = array;
     
     printf("Enter a message: ");
 
@@ -19,9 +22,13 @@ int main()
 
     while (p >= array)
     {
-        putchar(*p--);
+        if (*p2++ == *p--)
+        {
+            palindrome = true;
+        }
+        // putchar(*p--);
     }
-
-    printf("\n");
+    
+    printf("%d\n", palindrome);
 
 }
