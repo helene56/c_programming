@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <ctype.h> /* isalpha, toupper */
 // write a program that reads a mesage then checks wheter it's a palindrome
 // revise the prgram to use pointerd instead of integers to keep track of positions in the array
 
@@ -15,19 +16,25 @@ int main()
     
     printf("Enter a message: ");
 
-    while ((userMessage = getchar()) != '\n')
+    while ((userMessage = toupper(getchar())) != '\n' && p < array + n)
     {
-        *p++ = userMessage;
+        if (isalpha(userMessage))
+        {
+            *p++ = userMessage;
+        }
     }
 
-    while (p >= array)
-    {
-        // if (*p2++ == *p--)
-        // {
-        //     palindrome = true;
-        // }
+    p--; // Move back from the '\0' position or past-the-end position to the last valid character
 
-        palindrome = *p2++ == *p-- ? true : palindrome;
+    while (p > p2)
+    {
+        if (*p2++ == *p--)
+        {
+            palindrome = true;
+            break; // Exit loop early if a mismatch is found
+        }
+
+        // palindrome = *p2++ == *p-- ? true : palindrome;
     }
     
     if (palindrome)
