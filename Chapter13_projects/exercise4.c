@@ -1,6 +1,8 @@
 // modify read_line function in each of the following ways
 // a) have it skip white space before beginning to store input characters
 // b) have it stop reading at the first white-space character
+// c) have it stop reading at the first new-line character then store the new-line character in the string
+// d) have it leave behind characters that it doesn't have room to store
 #include <stdio.h>
 #include <ctype.h>
 
@@ -14,7 +16,7 @@ int read_line(char str[], int n)
         {
             break;
         }
-        else if (i < n && ch != ' ')
+        else if (i < n)
         {
             str[i++] = ch;
         }
