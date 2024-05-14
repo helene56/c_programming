@@ -16,11 +16,12 @@ void get_extension(const char *file_name, char *extension)
         if (*(p++) == '.')
         {
             strcpy(extension, p);
+            return;
         }
-        else
-        {
-            strcpy(extension, "\0");
-        }
+        
+        
+        strcpy(extension, "");
+        
     }
     
     
@@ -29,7 +30,7 @@ void get_extension(const char *file_name, char *extension)
 
 int main()
 {
-    char file[] = "memo.txt";
+    char file[] = "memoe.txt";
     char extension[] = "";
     get_extension(file, extension);
     printf("file: %s extension: %s\n", file, extension);
