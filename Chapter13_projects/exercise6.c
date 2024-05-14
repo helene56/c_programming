@@ -10,15 +10,10 @@ void censor(char *str)
 
     while ( p < str + len)
     {
-        if (*p == 'f')
+        if (*p == 'f' && *(p + 1) == 'o' && *(p + 2) == 'o')
         {
-            if (*(p + 1) == 'o' && *(p + 2) == 'o')
-            {
-                *p = 'x';
-                *(p+1) = 'x';
-                *(p+2) = 'x';
-                p += 3; // maybe unecessary, but else the pointer will check p + 1 and p + 2 again
-            }
+            *p = *(p+1) = *(p+2) = 'x';
+            p += 3; // maybe unecessary, but else the pointer will check p + 1 and p + 2 again
         } 
         else
         {
