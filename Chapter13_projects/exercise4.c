@@ -2,6 +2,7 @@
 // a) have it skip white space before beginning to store input characters
 // b) have it stop reading at the first white-space character
 #include <stdio.h>
+#include <ctype.h>
 
 int read_line(char str[], int n)
 {
@@ -9,7 +10,11 @@ int read_line(char str[], int n)
 
     while ((ch = getchar()) != '\n')
     {
-        if (i < n)
+        if (isspace(ch))
+        {
+            break;
+        }
+        else if (i < n && ch != ' ')
         {
             str[i++] = ch;
         }
