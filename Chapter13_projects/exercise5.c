@@ -3,5 +3,10 @@
 
 void capitalize(char *str)
 {
-    
+    int len = strlen(*str);
+    for (int i = 0; i < len;)
+    {
+        str[i++] = toupper(str[i]);
+    }
 }
+
