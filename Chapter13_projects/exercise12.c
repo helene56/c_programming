@@ -10,7 +10,7 @@ void get_extension(const char *file_name, char *extension)
     const char *p = file_name;
     int len = strlen(file_name);
 
-    while (*p++ != '.' && p < file_name + len)
+    while (p < file_name + len)
     {
         
         if (*(p++) == '.')
@@ -30,7 +30,7 @@ void get_extension(const char *file_name, char *extension)
 
 int main()
 {
-    char file[] = "memoe.txt";
+    char file[] = "memo.txt";
     char extension[] = "";
     get_extension(file, extension);
     printf("file: %s extension: %s\n", file, extension);
