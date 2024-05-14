@@ -8,7 +8,7 @@ void censor(char *str)
     char *p = str;
     int len = strlen(str);
 
-    while ( p < str + len)
+    while ( p < str + len) // another option was to use p + 2 != '\0' as every string contains this at the end, making len unessecary
     {
         if (*p == 'f' && *(p + 1) == 'o' && *(p + 2) == 'o')
         {
