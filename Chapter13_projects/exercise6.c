@@ -12,22 +12,25 @@ void censor(char *str)
     {
         if (*p == 'f')
         {
-            
             if (*(p + 1) == 'o' && *(p + 2) == 'o')
             {
                 *p = 'x';
                 *(p+1) = 'x';
                 *(p+2) = 'x';
-
+                p += 3; // maybe unecessary, but else the pointer will check p + 1 and p + 2 again
             }
+        } 
+        else
+        {
+            p++;
         }
-        p++;
+        
     }
 }
 
 int main()
 {
-    char string[] = "fod";
+    char string[] = "food fool";
     censor(string);
     printf("%s", string);
     printf("\n");
