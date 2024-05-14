@@ -27,3 +27,12 @@ void get_extension(const char *file_name, char *extension)
     }
 
 }
+
+int main()
+{
+    char file[] = "memo.txt";
+    char extension[] = "";
+    get_extension(file, extension);
+    printf("file: %s extension: %s", file, extension);
+
+}
