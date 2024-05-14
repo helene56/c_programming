@@ -12,18 +12,18 @@ int read_line(char str[], int n)
 
     while ((ch = getchar()) != '\n')
     {
-        if (isspace(ch))
-        {
-            break;
-        }
-        else if (i < n)
+    
+        if (i < n)
         {
             str[i++] = ch;
+            
         }
     }
-    str[i] = '\0';
+    str[i] = '\n';
+    str[++i] = '\0';
     return i;
 }
+
 
 int main()
 {
@@ -35,4 +35,5 @@ int main()
 
     printf("%d", read_line(array, n));
     printf("\n");
+    
 }
