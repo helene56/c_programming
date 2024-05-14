@@ -8,23 +8,22 @@ void get_extension(const char *file_name, char *extension);
 void get_extension(const char *file_name, char *extension)
 {
     const char *p = file_name;
-    int len = strlen(*file_name);
+    int len = strlen(file_name);
 
     while (*p++ != '.' && p < file_name + len)
     {
-        strcpy(file_name, p);
-    }
-    if (*++p == '.')
-    {
-        while (*p++ != '\0')
+        
+        if (*(p++) == '.')
         {
             strcpy(extension, p);
         }
+        else
+        {
+            strcpy(extension, "\0");
+        }
     }
-    else
-    {
-        strcpy(extension, "\0");
-    }
+    
+    
 
 }
 
@@ -33,6 +32,6 @@ int main()
     char file[] = "memo.txt";
     char extension[] = "";
     get_extension(file, extension);
-    printf("file: %s extension: %s", file, extension);
+    printf("file: %s extension: %s\n", file, extension);
 
 }
