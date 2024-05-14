@@ -7,15 +7,17 @@
 void capitalize(char *str)
 {
     int len = strlen(str);
-    for (int i = 0; i < len;)
+    char *p = str;
+    while (p < str + len)
     {
-        str[i++] = toupper(str[i]);
+        *p++ = toupper(*p);
     }
 }
 
 int main()
 {
-    char string[] = "hej";
+    char string[] = "abc";
     capitalize(string);
     printf("%s", string);
+    printf("\n");
 }
