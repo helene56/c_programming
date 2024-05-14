@@ -10,3 +10,9 @@ void capitalize(char *str)
     }
 }
 
+int main()
+{
+    char string = "hej";
+    capitalize(string);
+    printf("%s", string);
+}
