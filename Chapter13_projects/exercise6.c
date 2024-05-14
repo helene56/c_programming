@@ -24,3 +24,11 @@ void censor(char *str)
         p++;
     }
 }
+
+int main()
+{
+    char string[] = "fod";
+    censor(string);
+    printf("%s", string);
+    printf("\n");
+}
