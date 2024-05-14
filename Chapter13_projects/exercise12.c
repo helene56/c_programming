@@ -10,22 +10,15 @@ void get_extension(const char *file_name, char *extension)
     const char *p = file_name;
     int len = strlen(file_name);
 
-    while (p < file_name + len)
+    while (p < file_name + len) // could have used while (*p) as if it returns a letter the function will keep it going but the null terminator has an integer value of 0, this ending the loop
     {
-        
         if (*(p++) == '.')
         {
             strcpy(extension, p);
             return;
         }
-        
-        
         strcpy(extension, "");
-        
     }
-    
-    
-
 }
 
 int main()
