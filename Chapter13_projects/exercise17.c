@@ -27,3 +27,12 @@ bool test_extension(const char *file_name, const char *extension)
         
     }
 }
+
+
+int main()
+{
+    char string[] = "memo.txt";
+    char extension[] = "txt";
+    bool test = test_extension(string, extension);
+    printf("%d", test);
+}
