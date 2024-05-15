@@ -16,3 +16,11 @@ void build_index_url(const char *domain, char *index_url)
     strcat(index_url, p);
     strcat(index_url, "/index.html");
 }
+
+int main()
+{
+    char string[] = "knking.com";
+    char result[] = "";
+    build_index_url(string, result);
+    printf("%s", result);
+}
