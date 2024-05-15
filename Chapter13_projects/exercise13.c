@@ -7,13 +7,9 @@ void build_index_url(const char *domain, char *index_url);
 
 void build_index_url(const char *domain, char *index_url)
 {
-    // steps: copy http://www into index_url
-    // use strcat to append the string from domain after index_url
-    // use strcat to append /index.html to index_url
     const char *p = domain;
     strcpy(index_url, "http://www.");
-    strcat(index_url, p);
-    strcat(index_url, "/index.html");
+    strcat(strcat(index_url, p), "/index.html");
 }
 
 int main()
