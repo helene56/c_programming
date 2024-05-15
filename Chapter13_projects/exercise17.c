@@ -10,7 +10,7 @@ bool test_extension(const char *file_name, const char *extension)
 {
     const char *p = file_name;
 
-    while (*p)
+    while (*p) // search for the end of a string idiom
     {
         if (*p++ == '.')
         {
