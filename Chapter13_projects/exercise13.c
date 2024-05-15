@@ -11,7 +11,6 @@ void build_index_url(const char *domain, char *index_url)
     // use strcat to append the string from domain after index_url
     // use strcat to append /index.html to index_url
     const char *p = domain;
-
     strcpy(index_url, "http://www.");
     strcat(index_url, p);
     strcat(index_url, "/index.html");
@@ -20,7 +19,8 @@ void build_index_url(const char *domain, char *index_url)
 int main()
 {
     char string[] = "knking.com";
-    char result[] = "";
+    char result[50] = "";
     build_index_url(string, result);
-    printf("%s", result);
+    printf(result);
+    printf("\n");
 }
