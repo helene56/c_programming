@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
     // {
     //     printf("%s\n", argv[i]);
     // }
-    printf("%s", *argv[3]);
-    printf("%s", *argv[2]);
-    printf("%s", *argv[1]);
+    // printf("%d", argc);
+    printf("%s ", argv[3]);
+    printf("%s ", argv[2]);
+    printf("%s\n", argv[1]);
 }
