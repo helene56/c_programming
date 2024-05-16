@@ -18,7 +18,7 @@ int main()
     printf("Enter word: ");
     scanf("%s", userInput);
     strcpy(smallest, userInput); // initiliaze first word to the smallest
-    
+    strcpy(largest, userInput); // initiliaze first word to the smallest
 
     while (user_len != 4)
     {
@@ -27,7 +27,8 @@ int main()
         user_len = strlen(userInput);
         // printf("%d\n", user_len);
         compare_strings(largest, smallest, userInput);
-        printf("%s\n", smallest);
+        printf("smallest: %s\n", smallest);
+        printf("largest: %s\n", largest);
 
     }
 
@@ -38,7 +39,10 @@ void compare_strings(char *largest_string, char *smallest_string, const char *us
     if (strcmp(user_string, smallest_string) < 0)
     {
         strcpy(smallest_string, user_string);
-        // printf("%s", smallest_string);
+    }
+    if (strcmp(user_string, smallest_string) > 0)
+    {
+        strcpy(largest_string, user_string);
     }
 }
 
