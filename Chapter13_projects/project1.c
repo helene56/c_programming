@@ -1,6 +1,6 @@
 // write a program fhat finds the "smallest" and "largest" in a series of words. 
 // after the user enters the words, the program will determine which words would come first and last if the words were listed in dictionary order.
-// the program must stop axxepting input ehrn the user enters a four-letter word.
+// the program must stop accepting input when the user enters a four-letter word.
 // assume that no word is more than 20 letters long.
 
 #include <stdio.h>
@@ -25,12 +25,10 @@ int main()
         printf("Enter word: ");
         scanf("%s", userInput);
         user_len = strlen(userInput);
-        // printf("%d\n", user_len);
         compare_strings(largest, smallest, userInput);
-        printf("smallest: %s\n", smallest);
-        printf("largest: %s\n", largest);
-
     }
+    printf("smallest word: %s\n", smallest);
+    printf("largest word: %s\n", largest);
 
 }
 
@@ -40,7 +38,7 @@ void compare_strings(char *largest_string, char *smallest_string, const char *us
     {
         strcpy(smallest_string, user_string);
     }
-    if (strcmp(user_string, smallest_string) > 0)
+    if (strcmp(user_string, largest_string) > 0)
     {
         strcpy(largest_string, user_string);
     }
