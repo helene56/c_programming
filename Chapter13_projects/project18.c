@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+// note: could have used scanf(%d / %d / %d", &m, &d, &y) as it would have input the entered data in this format.
+// note: then i could have used a single printf statement:  printf("You entered the date %s %.2d, %d\n", months[m-1], d, y);
 int main()
 {
     printf("Enter a date (mm/dd/yyyy): ");
