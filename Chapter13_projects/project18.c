@@ -16,22 +16,20 @@ int main()
     char *p = user_input;
     char user_month[3];
 
-   
     for (int i = 0; i < 2; i++)
     {
         user_month[i] = *p++;
-        // char *user_month = month[] 
     }
-    int month = atoi(user_month);
 
-    char day_year[9];
-    while (*p++ != '/');
-    strcpy(p, day_year);
-    
+    int month = atoi(user_month) - 1;
 
-
-    printf("You entered the date %s %s", months[month], day_year);
-
-
-    
+    printf("You entered the date %s ", months[month]);
+    while (*p != '/')
+    {
+        printf("%c", *p);
+        p++;
+    }
+    printf(",");
+    p++;
+    printf(" %s\n", p);
 }
