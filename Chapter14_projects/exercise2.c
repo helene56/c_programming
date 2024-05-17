@@ -1,0 +1,1 @@
+// write a macro NELEMS(a) that computes the number of elements in a one-dimensional array a.
