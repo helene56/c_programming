@@ -5,14 +5,17 @@
 
 #include <stdio.h>
 #define CHECK(x, y, n) (((x) >= 0 && (x) <= ((n)-1))&&((y) >= 0 && (y) <= ((n)-1)) ? 1 : 0)
+#define MEDIAN(x, y, z) ( x > y && x > z ? (z > y ? z : y) : (x > z ? x : z))
 
 int main()
 {
-    int x = 11;
-    int y = 2;
+    int x = 3;
+    int y = 4;
+    int z = 2;
     int n = 10;
 
     
     printf("%d\n", CHECK(x, y, n));
+    printf("median of %d, %d, %d is %d\n", x, y, z, MEDIAN(x, y, z));
 
 }
