@@ -4,8 +4,10 @@
 // (c) POLYNOMIAL(x) - computes the polynomial 3x^5+2x^4-5x^3-x^2+7x-6.
 
 #include <stdio.h>
+#include <math.h>
 #define CHECK(x, y, n) (((x) >= 0 && (x) <= ((n)-1))&&((y) >= 0 && (y) <= ((n)-1)) ? 1 : 0)
-#define MEDIAN(x, y, z) ( x > y && x > z ? (z > y ? z : y) : (x > z ? x : z))
+#define MEDIAN(x, y, z) ( (x) > (y) && (x) > (z) ? ((z) > (y) ? (z) : (y)) : ((x) > (z) ? (x) : (z)))
+#define POLYNOMIAL(x) (3*pow((x),5) + 2*pow((x),4) - 5*pow((x),3) - pow((x),2) + 7*(x)-6)
 
 int main()
 {
@@ -17,5 +19,6 @@ int main()
     
     printf("%d\n", CHECK(x, y, n));
     printf("median of %d, %d, %d is %d\n", x, y, z, MEDIAN(x, y, z));
+    printf("polynomial of %d is: %d\n", x, POLYNOMIAL(x));
 
 }
