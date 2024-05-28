@@ -75,9 +75,9 @@ struct color brighter(struct color c)
         c.red = 3;
     }
 
-    c.blue = (int) c.blue/0.7;
-    c.green = (int) c.green/0.7;
-    c.red = (int) c.red/0.7;
+    c.blue = (int) (c.blue/0.7);
+    c.green = (int) (c.green/0.7);
+    c.red = (int) (c.red/0.7);
 
     if (c.red > 255)
     {
@@ -96,3 +96,7 @@ struct color brighter(struct color c)
 }
 
 // (e)
+struct color darker(struct color c)
+{
+    return (struct color) {(int) (c.red * 0.7), (int) (c.green * 0.7), (int) (c.blue * 0.7)};
+}
