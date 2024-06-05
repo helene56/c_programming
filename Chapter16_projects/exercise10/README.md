@@ -2,7 +2,7 @@
 The following structures are designed to store information about objects on a graphics screen:
 
 ```
-struct point { int c, y; };
+struct point { int x, y; };
 struct rectangle { struct point upper_left, lower_right; };
 ```
 
@@ -10,7 +10,7 @@ A `point` structure stores the `x` and `y` coordinates of a point on the screen.
 
 (a) Compute the area of `r`.
 
-(b) Compute the center of `r`, rturning it as a `point` value. If either the `x` or `y` coordinate of the center isn't an integer, sstore its truncated value in the `point` structure.
+(b) Compute the center of `r`, returning it as a `point` value. If either the `x` or `y` coordinate of the center isn't an integer, store its truncated value in the `point` structure.
 
 (c) Move `r` by `x` units in the *x* direction and `y` units in the *y* direction, returning the modified version of `r`. (`x` and `y` are additional arguments to the function.)
 
