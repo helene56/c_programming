@@ -42,3 +42,19 @@ struct shape move_shape(struct shape s, int x, int y)
 
     return s;
 }
+
+// (c)
+struct shape scale(struct shape s, double c)
+{
+    if (s.shapekind == RECTANGLE)
+    {
+        s.u.rectangle.height *= c;
+        s.u.rectangle.width *= c;
+    }
+    else if (s.shapekind == CIRCLE)
+    {
+        s.u.circle.radius *= c; 
+    }
+
+    return s;
+}
