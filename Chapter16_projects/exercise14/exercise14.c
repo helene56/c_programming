@@ -33,3 +33,12 @@ double compute_area(struct shape s)
 
     return area;
 }
+
+// (b)
+struct shape move_shape(struct shape s, int x, int y)
+{
+    s.center.x += x;
+    s.center.y += y;
+
+    return s;
+}
