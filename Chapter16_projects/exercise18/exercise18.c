@@ -3,10 +3,11 @@ enum Piece {PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING, EMPTY};
 
 enum Color {BLACK, WHITE};
 
+
 // b
 struct Square {
-    Piece;
-    Color;
+    enum Piece piece;
+    enum Color color;
 };
 
 // c
