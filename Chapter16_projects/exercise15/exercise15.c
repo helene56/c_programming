@@ -1,0 +1,5 @@
+// a
+enum days {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY};
+
+// b
+typedef enum {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY} days;
