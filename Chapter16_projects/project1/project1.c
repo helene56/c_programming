@@ -1,9 +1,9 @@
+#include <stdio.h>
 
 struct dialing_code {
     char *country;
     int code;
 };
-
 
 const struct dialing_code country_codes[] =
     {{"Argentina",            54}, {"Bangladesh",     889},
@@ -23,7 +23,27 @@ const struct dialing_code country_codes[] =
      {"Ukraine",             380}, {"United Kingdom",  44},
      {"United States",         1}, {"Vietnam",         84}};
 
+# define SIZE (sizeof(country_codes)/sizeof(country_codes[0]))
+
 int main()
 {
-    
+    // printf("size of array: %d\n", SIZE);
+    printf("Enter dialing code\n");
+    int user_code;
+
+    scanf("%d", &user_code);
+
+    // find the size of the array - done
+    // loop through the country codes, that each contains a pointer and country code.
+    // if the code == user_code, return the pointer and then break
+
+    for (int i; i < SIZE; i++)
+    {
+        if (country_codes[i].code == user_code)
+        {
+            printf("%s\n", country_codes[i].country);
+            break;
+        }
+        
+    }
 }
