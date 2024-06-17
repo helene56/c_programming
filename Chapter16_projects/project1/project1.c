@@ -45,8 +45,11 @@ int main()
         if (country_codes[i].code == user_code)
         {
             printf("%s\n", country_codes[i].country);
-            break;
+            return 0;
         }
         
+        
     }
+
+    printf("Error: %d is not a valid country code.\n", user_code);
 }
