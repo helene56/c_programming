@@ -25,6 +25,9 @@ const struct dialing_code country_codes[] =
 
 # define SIZE (sizeof(country_codes)/sizeof(country_codes[0]))
 
+// note: could have defined this instead, so the macro could be defined at the top and country_code would then be equal to x in this:
+// #define ARRAY_LEN(x) ((int) (sizeof((x)) / sizeof((x)[0])))
+
 int main()
 {
     // printf("size of array: %d\n", SIZE);
