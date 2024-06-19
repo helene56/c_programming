@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>  // Include this header for malloc
 
-void * my_malloc(int n_byte)
+void * my_malloc(size_t n_byte)
 {
     void *p = malloc(n_byte);
     if (p) // if malloc is not equal to null
@@ -18,6 +18,6 @@ void * my_malloc(int n_byte)
 
 int main()
 {
-    int n = 1000;
+    size_t n = 1000;
     my_malloc(n);
 }
