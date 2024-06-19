@@ -16,6 +16,7 @@ int *create_array(int n, int initial_value)
     }
     else
     {
+         printf("Error: malloc failed\n");
         return NULL;
     }
     
